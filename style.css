@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: monospace;
+}
+
+/* Settings */
+:root{
+    --background-color: aliceblue ;
+    --black: black;
+    --white: white;
+}
+:root.dark-mode{
+    --background-color: rgb(56, 56, 56);
+    --black: white;
+    --white: black;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page{
+    min-height: 100vh;
+    background-color: var(--background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    position: fixed;
+    height: 7.5vh;
+    width: 97.5%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;    
+}
+
+h2{
+    font-weight: bold;
+    font-size: 1.75rem;
+
+    color: var(--black)
+}
+
+/* Links and Buttons */
+.start-button{
+    background-color: transparent;
+    color: var(--black);
+    
+    border: var(--black) 2px solid;
+    border-radius: .75rem;
+
+    padding: .5rem;
+
+    font-weight: bold;
+    font-size: 1.75rem;
+
+    cursor: pointer;
+
+    transition:  color .3s ease-in;
+}
+.start-button:hover{
+    transform: scale(1.05);
+
+    color: var(--white);
+    background-color: var(--black);
+}
+
+/* Inputs */
+.userNumber{
+    width: 7.5rem;
+
+    padding: .25rem;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Start Landing */
+.start-Landing{
+    display: flex;
+    flex-direction: column ;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 4rem;
+
+    color: var(--black);
+}
+
+/* Game-langing */
+#game-landing{
+    display: none;
+}
+
+#switch{
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 38px;
+}
+
+#switch input[type="checkbox"]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#switch #slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black);
+    transition: .3s;
+    border-radius: 1.5rem;
+}
+
+#switch #slider:before{
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    transition: .4s;
+}
+
+#switch input[type="checkbox"]:checked + #slider{
+    background-color: var(--black);
+}
+
+#switch input[type="checkbox"]:checked + #slider:before{
+    transform: translateX(2.55rem);
+}

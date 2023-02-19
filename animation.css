@@ -1,0 +1,14 @@
+.animate-down{
+    animation: down .3s;
+}
+
+@keyframes down{
+    from{
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
